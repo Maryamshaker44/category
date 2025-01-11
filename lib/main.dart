@@ -7,4 +7,3 @@ void main() {
   dataAuth.PostData;
   runApp(const MyApp());
 }
-

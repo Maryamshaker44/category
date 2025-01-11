@@ -31,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: NetworkImage(
-                'https://cdn.pixabay.com/photo/2020/04/17/19/48/city-5056657_640.png'),
+                'https://www.ntiegypt.sci.eg/moodle/pluginfile.php/1/core_admin/logocompact/300x300/1725271317/NTI%20Logo.png'),
           ),
           gradient: LinearGradient(
             colors: [Color.fromARGB(255, 178, 201, 221), Colors.purpleAccent],
