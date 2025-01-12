@@ -17,7 +17,7 @@ class CategoryScreen extends StatelessWidget {
     return BlocProvider(
       create: (context) => CategoryCubit(CategoryData())..getDataCubit(endPoint: endPoint),
       child: Scaffold(
-        drawer: Drawer(
+        drawer: const Drawer(
           child: LoginScreen(),
         ),
         appBar: customAppBar(title: title),
