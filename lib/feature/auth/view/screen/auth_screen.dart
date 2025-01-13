@@ -1,8 +1,11 @@
+// ignore_for_file: body_might_complete_normally_nullable
+
+import 'package:category/core/widget/my_validatore.dart';
 import 'package:category/feature/auth/cubit/auth_cubit.dart';
+import 'package:category/feature/auth/cubit/auth_state.dart';
 import 'package:category/feature/auth/view/widget/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:category/core/widget/my_validators.dart';
 
 class AuthScreen extends StatefulWidget {
   const AuthScreen({super.key});
@@ -48,11 +51,11 @@ class _AuthScreenState extends State<AuthScreen> {
       create: (context) => AuthCubit(),
       child: BlocConsumer<AuthCubit, AuthState>(
         listener: (context, state) {
-          if (state is AuthSuccess) {
+          if (state is AuthSuccessState) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
-                  backgroundColor: Colors.blue,
-                  content: Text(state.userData["message"])),
+                  backgroundColor: Colors.purpleAccent,
+                  content: Text(state.userdata["message"])),
             );
           }
         },
@@ -72,14 +75,11 @@ class _AuthScreenState extends State<AuthScreen> {
                     ),
                     child: Column(
                       children: [
-                        Text("Register"),
+                        Text(
+                          "Register",
+                        ),
                         SizedBox(
                           height: 5,
-                        ),
-                        Text(
-                          "Fill your information below",
-                          style: TextStyle(
-                              fontWeight: FontWeight.w400, color: Colors.grey),
                         ),
                         SizedBox(
                           height: 10,
@@ -177,25 +177,25 @@ class _AuthScreenState extends State<AuthScreen> {
                   const SizedBox(height: 20),
                   ElevatedButton(
                     onPressed: () {
-                      if (state is AuthSuccess) {
+                      if (state is AuthSuccessState) {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
-                              backgroundColor: Colors.blue,
-                              content: Text(state.userData["message"])),
+                              backgroundColor: Colors.purpleAccent,
+                              content: Text(state.userdata["message"])),
                         );
                       }
                       AuthCubit().postDataCubit(
-                        nameData: nameController.text,
-                        emailData: emailController.text,
-                        genderData: genderController.text,
-                        nationalIdData: nationalIdController.text,
-                        passwordData: passwordController.text,
-                        phoneData: phoneController.text,
-                        profileImageData: profileImageController.text,
-                        tokenData: tokenController.text,
+                        namedata: nameController.text,
+                        emaildata: emailController.text,
+                        genderdata: genderController.text,
+                        nationalIddata: nationalIdController.text,
+                        passworddata: passwordController.text,
+                        phonedata: phoneController.text,
+                        profileImagedata: profileImageController.text,
+                        tokendata: tokenController.text,
                       );
                     },
-                    child: const Text("SinUp"),
+                    child: const Text("Sign Up"),
                   ),
                 ]),
               ),
