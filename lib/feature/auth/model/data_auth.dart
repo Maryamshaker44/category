@@ -34,8 +34,33 @@ class DataAuth {
     } on DioException catch (error) {
       if (error.response != null) {
         print(error.response!.data['message']);
-        return error.response!.data['message'];
+        return error.response!.data;
+      }
+    }
+  }
+
+  loginData({
+    required email,
+    required password,
+  }) async {
+    var response =
+        await dio.post('https://elwekala.onrender.com/user/login', data: {
+      "email": email,
+      "password": password,
+    });
+
+    try {
+      var user = response.data;
+      print(response.statusCode);
+      print(user['message']);
+      return user;
+    } on DioException catch (error) {
+      if (error.response != null) {
+        print(error.response!.data['message']);
+        return error.response!.data;
       }
     }
   }
 }
+
+

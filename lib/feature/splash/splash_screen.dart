@@ -1,4 +1,4 @@
-import 'package:category/feature/category/view/screen/login_screen.dart';
+import 'package:category/feature/auth/view/screen/auth_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
@@ -19,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void navigateAfterThreeSeconds(){
     Future.delayed(const Duration(seconds: 5)).then((value) {
       Navigator.push(context, MaterialPageRoute(builder: (context){
-        return  const LoginScreen();
+        return  const AuthScreen();
       }));
     });
   }

@@ -1,7 +1,7 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:category/feature/auth/view/widget/border_text_field.dart';
 import 'package:flutter/material.dart';
+import 'border_text_field.dart';
 
 
 class CustomTextField extends StatelessWidget {

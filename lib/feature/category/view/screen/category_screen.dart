@@ -1,6 +1,6 @@
 import 'package:category/feature/category/cubit/category_cubit.dart';
 import 'package:category/feature/category/model/data/category_data.dart';
-import 'package:category/feature/category/view/screen/login_screen.dart';
+import 'package:category/feature/category/view/screen/start_screen.dart';
 import 'package:category/feature/category/view/widget/custom_appBar.dart';
 import 'package:category/feature/category/view/widget/success_widget_category.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +18,7 @@ class CategoryScreen extends StatelessWidget {
       create: (context) => CategoryCubit(CategoryData())..getDataCubit(endPoint: endPoint),
       child: Scaffold(
         drawer: const Drawer(
-          child: LoginScreen(),
+          child: StartScreen(),
         ),
         appBar: customAppBar(title: title),
         body: BlocBuilder<CategoryCubit, CategoryState>(

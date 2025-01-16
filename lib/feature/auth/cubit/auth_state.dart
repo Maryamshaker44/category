@@ -7,6 +7,8 @@ final class AuthInitial extends AuthState {}
 final class AuthLoadingState extends AuthState {}
 
 final class AuthSuccessState extends AuthState {
-  final userdata;
+  final Map<String, dynamic> userdata;
   AuthSuccessState({required this.userdata});
 }
+
+final class ChooseImage extends AuthState {}
