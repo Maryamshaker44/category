@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_print
 
+import 'package:category/core/builder/cache_data.dart';
 import 'package:dio/dio.dart';
 
 class DataAuth {
@@ -51,6 +52,10 @@ class DataAuth {
 
     try {
       var user = response.data;
+      var newToken = user["user"]["nationalId"];
+      print(newToken);
+      CacheShared.shared!.setString("ID", newToken);
+      print(user["user"]["nationalId"]);
       print(response.statusCode);
       print(user['message']);
       return user;
