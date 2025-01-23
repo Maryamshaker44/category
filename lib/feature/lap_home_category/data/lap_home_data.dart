@@ -14,9 +14,6 @@ class LapHomeData {
         print(repoData);
         List<LapHomeModel> listModel =
             repoData.map((e) => LapHomeModel.fromJson(e)).toList();
-        print(listModel[1].image);
-        print(listModel[4].image);
-
         return listModel;
       }
     } on DioException catch (error) {
