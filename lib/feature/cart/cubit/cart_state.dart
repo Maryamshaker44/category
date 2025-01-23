@@ -17,3 +17,5 @@ final class CartGetAllScuccess extends CartState {
 }
 
 final class CartDelete extends CartState {}
+
+final class CartUpdate extends CartState {}

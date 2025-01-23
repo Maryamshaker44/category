@@ -51,4 +51,23 @@ class CartData {
       }
     }
   }
+
+  updateCart({required String productId, required quantity}) async {
+    var response = await dio.put("https://elwekala.onrender.com/cart", data: {
+      "nationalId": "30293701546953",
+      "productId": productId,
+      "quantity": quantity
+    });
+    try {
+      var responseData = response.data;
+      print(responseData);
+      return responseData;
+    } on DioException catch (error) {
+      if (error.response != null) {
+        print(error.response!.data);
+        return error.response!.data;
+      }
+    }
+    throw Exception('Failed to load data');
+  }
 }
