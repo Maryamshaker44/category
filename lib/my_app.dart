@@ -1,9 +1,6 @@
-import 'package:category/feature/auth/view/screen/login_screen.dart';
 import 'package:category/feature/cart/cubit/cart_cubit.dart';
 import 'package:category/feature/fav/cubit/fav_cubit.dart';
-import 'package:category/feature/fav/view/screen/fav_screen.dart';
 import 'package:category/feature/lap_home_category/view/screen/home_lap_screen.dart';
-import 'package:category/feature/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
