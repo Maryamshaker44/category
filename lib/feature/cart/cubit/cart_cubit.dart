@@ -26,7 +26,7 @@ class CartCubit extends Cubit<CartState> {
 
   getDeleteCartCubit({required String productId}) async {
     emit(CartLoading());
-    cartData.deleteCart(productId: productId);
+    await cartData.deleteCart(productId: productId);
     getCartAllCubit();
   }
 }

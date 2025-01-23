@@ -7,7 +7,9 @@ class FavScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return BlocProvider(
+      create: (context) => FavCubit()..getAllFavCubit(),
+      child: Scaffold(
         appBar: AppBar(title: const Text("Fav")),
         body: BlocBuilder<FavCubit, FavState>(
           builder: (context, state) {
@@ -18,16 +20,16 @@ class FavScreen extends StatelessWidget {
                     return ListTile(
                       title: Text(state.listFav[index].name),
                       leading: CircleAvatar(
-                        backgroundImage: NetworkImage(state.listFav[index].image),
+                        backgroundImage:
+                            NetworkImage(state.listFav[index].image),
                       ),
                       trailing: IconButton(
-                      onPressed: () {
-                        FavCubit.get(context).getDeleteFavCubit(
-                          productId: state.listFav[index].id,
-                        );
-                      },
-                      icon: const Icon(Icons.delete , color: Colors.red)),
-
+                          onPressed: () {
+                            FavCubit.get(context).getDeleteFavCubit(
+                              productId: state.listFav[index].id,
+                            );
+                          },
+                          icon: const Icon(Icons.delete, color: Colors.red)),
                     );
                   });
             } else {
@@ -35,6 +37,7 @@ class FavScreen extends StatelessWidget {
             }
           },
         ),
-      );
+      ),
+    );
   }
 }

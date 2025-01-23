@@ -7,27 +7,26 @@ import 'package:meta/meta.dart';
 part 'fav_state.dart';
 
 class FavCubit extends Cubit<FavState> {
-
   static FavCubit get(context) => BlocProvider.of(context);
   FavCubit() : super(FavInitial());
 
   final FavData favData = FavData();
 
-  addFavCubit({required String productId})async{
+  addFavCubit({required String productId}) async {
     emit(FavLoading());
     favData.addFav(productId: productId);
     emit(FavSuccess());
   }
 
-  getAllFavCubit()async{
+  getAllFavCubit() async {
     emit(FavLoading());
     var success = await favData.getAllData();
-    emit(FavGetSuccess(listFav:success ));
+    emit(FavGetSuccess(listFav: success));
   }
 
-  getDeleteFavCubit({required String productId})async{
+  getDeleteFavCubit({required String productId}) async {
     emit(FavLoading());
-   await favData.deleteFav(productId: productId);
+    await favData.deleteFav(productId: productId);
     getAllFavCubit();
   }
 }
