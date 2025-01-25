@@ -24,23 +24,3 @@ class CardProfileWidget extends StatelessWidget {
             )));
   }
 }
-
-/*  Card Build_body(SucessProfileCubit state,
-      {required String text, required IconData? icon}) {
-    return Card(
-      elevation: 2,
-      child: ListTile(
-        trailing: Text(
-          text,
-          style: const TextStyle(
-            fontSize: 24,
-          ),
-        ),
-        leading: Icon(
-          icon,
-          size: 40,
-        ),
-      ),
-    );
-  }
-} */

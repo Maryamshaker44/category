@@ -15,7 +15,7 @@ class ProfileScreen extends StatelessWidget {
       create: (context) => ProfileCubit()..getUserProfileDataCubit(),
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.blue,
+          backgroundColor: Colors.purpleAccent,
           title: const Text(
             'Profile',
             style: TextStyle(
