@@ -3,7 +3,9 @@ import 'package:category/feature/auth/cubit/auth_cubit.dart';
 import 'package:category/feature/auth/cubit/auth_state.dart';
 import 'package:category/feature/auth/view/widget/custom_text_field.dart';
 import 'package:category/feature/auth/view/widget/listener.dart';
+import 'package:category/feature/category/view/screen/start_screen.dart';
 import 'package:category/feature/lap_home_category/view/screen/home_lap_screen.dart';
+import 'package:category/feature/profile/view/screen/user_profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -109,7 +111,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               );
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
-                            return const HomeLapScreen();
+                            return const ProfileScreen();
                           }));
                         },
                         child: const Text("Login"),

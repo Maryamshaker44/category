@@ -3,6 +3,7 @@ import 'package:category/feature/category/model/data/category_data.dart';
 import 'package:category/feature/category/view/screen/start_screen.dart';
 import 'package:category/feature/category/view/widget/custom_appBar.dart';
 import 'package:category/feature/category/view/widget/success_widget_category.dart';
+import 'package:category/feature/profile/view/screen/user_profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
